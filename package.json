@@ -1,0 +1,33 @@
+{
+  "name": "inv-tech-weather",
+  "version": "1.0.0",
+  "description": "cmd line weather app - takes comma delimited city names and/or zip codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlennChon/inv-tech-weather.git"
+  },
+  "keywords": [
+    "weather",
+    "inv",
+    "tech",
+    "test",
+    "cmd",
+    "line"
+  ],
+  "author": "Glenn Chon",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/GlennChon/inv-tech-weather/issues"
+  },
+  "homepage": "https://github.com/GlennChon/inv-tech-weather#readme",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "jest": "^26.0.1",
+    "node-fetch": "^2.6.0"
+  }
+}
