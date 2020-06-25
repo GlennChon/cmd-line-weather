@@ -12,7 +12,6 @@ const getWeather = async () => {
     const url = `${api.url}${queryType}=${urlVal}&appid=${api.key}`
     return await getResp(url, val)
   })
-
   return Promise.allSettled(requests).then((responses) => {
     return responses.map((resp) => {
       return resp.value
@@ -87,6 +86,7 @@ const rightFill = (text, totalPadLength) => {
     return text
   }
 }
+
 const displayWeather = async () => {
   let allLocations = await getWeather()
   console.log(
@@ -131,8 +131,7 @@ module.exports = {
   getWeather,
   setQueryType,
   getResp,
-  kelvinToC,
-  kelvinToF,
   getLocalTime,
-  displayWeather
+  kelvinToF,
+  kelvinToC
 }
