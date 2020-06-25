@@ -2,7 +2,8 @@ Given an array of inputs (location name, postal code), log the current time and 
 Cities or ZipCodes are delimited by commas or spaces, two word cities must be enclosed in single or double quotes.
 
 Example: node ./weather 'New York', 10005, Tokyo, 'São Paulo', Pluto
-
+Response:
+![Output](./weather_resp_sample.JPG)
 Follow our Code guidelines
 
 You should use JavaScript, TypeScript is a plus.
