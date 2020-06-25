@@ -5,6 +5,10 @@
 Given an array of inputs (location name, postal code), log the current time and weather for those locations.
 Cities or ZipCodes are delimited by commas or spaces, two word cities must be enclosed in single or double quotes.
 
+## Prerequisites:
+
+api.js file that contains & exports _key_ (api key) and _url_ (api base url)
+
 ## Usage:
 
 **Example:**
