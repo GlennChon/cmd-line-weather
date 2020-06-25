@@ -89,45 +89,48 @@ const rightFill = (text, totalPadLength) => {
 
 const displayWeather = async () => {
   let allLocations = await getWeather()
-  console.log(
-    boxen(
-      `${chalk.yellow.bold('Current Weather')}\n\n${centerPadding(
-        'Search Term',
-        8
-      )}|${centerPadding('City', 10)}|${centerPadding(
-        'Weather',
-        5
-      )}|${centerPadding('Description', 8)}|${centerPadding('Time', 3)}`,
-      {
-        padding: { top: 1, right: 0, bottom: 1, left: 0 },
-        margin: 0,
-        borderStyle: 'double',
-        borderColor: 'blueBright',
-        align: 'center'
-      }
-    )
-  )
-  allLocations.map((loc) => {
-    const searchTerm = '  ' + loc.searchTerm
-    const city = loc.city
-    const weather = loc.weather
-    const description = loc.description
-    const time = loc.time.toString()
+
+  if (allLocations.length > 0) {
     console.log(
-      chalk.green(
-        rightFill(searchTerm, 30) +
-          rightFill(city, 25) +
-          rightFill(weather, 18) +
-          rightFill(description, 28) +
-          rightFill(time, 10) +
-          '\n'
+      boxen(
+        `${chalk.yellow.bold('Current Weather')}\n\n${centerPadding(
+          'Search Term',
+          8
+        )}|${centerPadding('City', 10)}|${centerPadding(
+          'Weather',
+          5
+        )}|${centerPadding('Description', 8)}|${centerPadding('Time', 3)}`,
+        {
+          padding: { top: 1, right: 0, bottom: 1, left: 0 },
+          margin: 0,
+          borderStyle: 'double',
+          borderColor: 'blueBright',
+          align: 'center'
+        }
       )
     )
-  })
+    allLocations.map((loc) => {
+      const searchTerm = '  ' + loc.searchTerm
+      const city = loc.city
+      const weather = loc.weather
+      const description = loc.description
+      const time = loc.time.toString()
+      console.log(
+        chalk.green(
+          rightFill(searchTerm, 30) +
+            rightFill(city, 25) +
+            rightFill(weather, 18) +
+            rightFill(description, 28) +
+            rightFill(time, 10) +
+            '\n'
+        )
+      )
+    })
+  }
 }
-
 displayWeather()
 module.exports = {
+  displayWeather,
   getWeather,
   setQueryType,
   getResp,
