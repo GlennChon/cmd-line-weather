@@ -7,7 +7,7 @@ Cities or ZipCodes are delimited by commas or spaces, two word cities must be en
 
 ## Prerequisites:
 
-api.js file that contains & exports _key_ (api key) and _url_ (api base url)
+api.js file that contains & exports _key_ (api key) and _url_ (api base url) from [Open Weather Map](https://openweathermap.org/)
 
 ## Usage:
 
