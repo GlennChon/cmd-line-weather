@@ -1,6 +1,7 @@
 Given an array of inputs (location name, postal code), log the current time and weather for those locations.
+Cities or ZipCodes are delimited by commas or spaces, two word cities must be enclosed in single or double quotes.
 
-Example: "./weather New York, 10005, Tokyo, São Paulo, Pluto"
+Example: node ./weather 'New York', 10005, Tokyo, 'São Paulo', Pluto
 
 Follow our Code guidelines
 
