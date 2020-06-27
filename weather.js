@@ -4,8 +4,7 @@ const moment = require('moment')
 const fetch = require('node-fetch')
 const api = require('./api')
 
-const getWeather = async () => {
-  let inputValue = process.argv.slice(2)
+const getWeather = (inputValue) => {
   let requests = inputValue.map(async (val) => {
     const queryType = setQueryType(val)
     const urlVal = encodeURI(val)
@@ -88,7 +87,9 @@ const rightFill = (text, totalPadLength) => {
 }
 
 const displayWeather = async () => {
-  let allLocations = await getWeather()
+  console.log(process.argv)
+  let inputValue = process.argv.slice(2)
+  let allLocations = await getWeather(inputValue)
 
   if (allLocations.length > 0) {
     console.log(
@@ -99,7 +100,10 @@ const displayWeather = async () => {
         )}|${centerPadding('City', 10)}|${centerPadding(
           'Weather',
           5
-        )}|${centerPadding('Description', 8)}|${centerPadding('Time', 3)}`,
+        )}|${centerPadding('Description', 8)}|${centerPadding(
+          'Temp F/C',
+          3
+        )}|${centerPadding('Time', 3)}`,
         {
           padding: { top: 1, right: 0, bottom: 1, left: 0 },
           margin: 0,
@@ -114,6 +118,8 @@ const displayWeather = async () => {
       const city = loc.city
       const weather = loc.weather
       const description = loc.description
+      const tempF = loc.tempF
+      const tempC = loc.tempC
       const time = loc.time.toString()
       console.log(
         chalk.green(
@@ -121,6 +127,7 @@ const displayWeather = async () => {
             rightFill(city, 25) +
             rightFill(weather, 18) +
             rightFill(description, 28) +
+            rightFill(`${tempF}/${tempC}`, 15) +
             rightFill(time, 10) +
             '\n'
         )
