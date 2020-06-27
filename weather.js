@@ -87,7 +87,6 @@ const rightFill = (text, totalPadLength) => {
 }
 
 const displayWeather = async () => {
-  console.log(process.argv)
   let inputValue = process.argv.slice(2)
   let allLocations = await getWeather(inputValue)
 
