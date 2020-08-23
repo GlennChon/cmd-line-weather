@@ -1,4 +1,4 @@
-# inv-tech-weather sample app
+# cmd line weather sample app
 
 ## Description:
 
